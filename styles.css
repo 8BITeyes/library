@@ -1,0 +1,177 @@
+:root {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --main-color:hsl(45, 57%, 72%);
+    --main-margin: 20px;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: auto;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*          POP UP MODAL            */
+
+
+.modal {
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    inset: 0 0 0 0;
+    margin: 0 auto;
+
+    width: fit-content;
+    height: 225px;
+    padding: 20px 25px 50px 30px;
+    background-color: var(--main-color);
+    z-index: 1;
+    border: none;
+}
+
+.close {
+    display: flex;
+    position: absolute;
+    font-size: 2em;
+    font-weight: bold;
+    top: 10px;
+    right: 15px;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.form-input {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4em;
+    
+    margin: 8px;
+    width: 450px;
+    padding: 0;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 250px;
+    height: 25px;
+    font-size: .95em;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+#submit {
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+#addNew {
+    position: absolute;
+    top: 30px;
+}
+#addNew:hover {
+    cursor: pointer;
+}
+
+
+/*          MODAL ANIMATIONS            */
+
+
+.modal {
+    top: -400px;
+    animation: drop 0.5s ease forwards;
+}
+
+@keyframes drop{
+    0%{opacity: 0}
+    70%{transform: translateY(900px)}
+    100%{transform: translateY(850px); opacity: 1;}
+}
+
+
+/*          HEADER          */
+
+
+.header {
+    height: 100px;
+    font-size: 1.3em;
+    font-weight: 800;
+    color: white;
+    background-color: var(--main-color);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    margin: var(--main-margin);
+}
+
+#buttons {
+    grid-column: 3 / 5;
+    gap: 30px;
+    margin: var(--main-margin);
+    
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#add {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+}
+
+#add:hover {
+    cursor: pointer;
+}
+
+#add:active {
+    font-size: .95em;
+}
+
+#books:hover {
+    cursor: pointer;
+}
+
+
+/*          BODY GRID           */
+
+
+.book-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 30px;
+
+    background-color: gray;
+}
+
+.book {
+    display: flex;
+    width: 200px;
+    height: 250px;
+    margin: 15px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+}

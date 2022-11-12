@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <fieldset class="modal" style="display: none;">
+        <span class="close">&times;</span>
+        <div class="form-input">
+            <label for="bookname">BOOK NAME: </label>
+            <input type="text" for="bookname" id="bookname" required>
+        </div>
+        <div class="form-input">
+            <label for="author">AUTHOR: </label>
+            <input type="text" for="author" id="author" required>
+        </div>
+        <div class="form-input">
+            <label for="pages">PAGES: </label>
+            <input type="number" for="pages" id="pages">
+        </div>
+        <div id="submit">
+            <button type="button" id="addNew">+ADD BOOK</button>
+        </div>
+    </fieldset>
+
+    <div class="header">
+        <div id="title">My Library</div>
+        <div id="buttons">
+            <div id="books">My Books</div>
+            <button type="button" id="add">+Add Books</button>     
+        </div>
+    </div>
+    <div class="book-grid">
+        <div class="book">
+            <h4>Title: The Hobbit</h4>
+            <span>Author: J.R.R. Tolkien</span>
+            <span>Pages: 304</span>
+        </div>
+    </div>
+</body>
+</html>
