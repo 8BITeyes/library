@@ -32,14 +32,24 @@ let authorInput = document.getElementById('author');
 let pageInput = document.getElementById('pages');
 
 formSubmit.addEventListener('click', function(){    //adds book to myLibrary array using form input values
-    let name = nameInput.value;
-    let author = authorInput.value;
-    let pageNum = pageInput.value;
+    if(nameInput.value === '' || authorInput.value === '') {
+        window.alert('Please fill in all fields before submitting book')
+        return;
+    } else {
+        let name = nameInput.value;
+        let author = authorInput.value;
+        let pageNum = pageInput.value;
+    
+        let newBook = new Book(name, author, pageNum);
+        myLibrary.push(newBook);
+    
+        checkLibrary(); //function adds book to grid element
+        pullDown();
 
-    let newBook = new Book(name, author, pageNum);
-    myLibrary.push(newBook);
-
-    checkLibrary(); //function adds book to grid element
+        nameInput.value = '';
+        authorInput.value = '';
+        pageInput.value = '';
+    }
 });
 
 
