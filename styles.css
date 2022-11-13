@@ -217,11 +217,19 @@ input[type="radio"] {
     width: 23px;
 }
 
-.status {
+.hasread {
     position: absolute;
     top: 214px;
     right: 130px;
     
     font-weight: bold;
     color: rgb(23, 185, 23);
+}
+.hasnotread {
+    position: absolute;
+    top: 214px;
+    right: 100px;
+
+    font-weight: bold;
+    color: white;
 }

@@ -30,8 +30,6 @@ const formSubmit = document.querySelector('#addNew'); //SUBMIT FORM BUTTON
 let nameInput = document.getElementById('bookname');
 let authorInput = document.getElementById('author');
 let pageInput = document.getElementById('pages');
-let readInput = document.getElementById('read');
-let notInput = document.getElementById('notread');
 
 formSubmit.addEventListener('click', function(){    //adds book to myLibrary array using form input values
     if(nameInput.value === '' || authorInput.value === '') {
@@ -59,6 +57,13 @@ formSubmit.addEventListener('click', function(){    //adds book to myLibrary arr
 
 const gridElement = document.querySelector('.book-grid');
 
+let readInput = document.getElementById('read');  //read status indicator
+let notInput = document.getElementById('notread');
+
+const notRead = document.createElement("span");
+notRead.innerText = 'NOT READ';
+notRead.classList.add('read-indicator');
+
 function checkLibrary(){
     let newestBook = myLibrary[myLibrary.length - 1];
 
@@ -79,8 +84,33 @@ function checkLibrary(){
 
     const removeIcon = document.createElement("img");
     removeIcon.setAttribute('src', 'icons/cancel_FILL0_wght400_GRAD0_opsz48.svg');
-    removeIcon.setAttribute('class', 'remove-button');
+    removeIcon.classList.add('remove-button');
     bookElement.appendChild(removeIcon);
+
+
+    const readStatus = document.createElement('span');
+    
+    if(readInput.checked === true) {
+        readStatus.innerText = 'READ';
+        readStatus.classList.add('hasread');
+        bookElement.appendChild(readStatus);
+    } else {
+        readStatus.innerText = 'NOT READ';
+        readStatus.classList.add('hasnotread');
+        bookElement.appendChild(readStatus);
+    }
+
+    readStatus.addEventListener('click', function(){
+        if(readStatus.innerText === 'READ') {
+            readStatus.innerText = 'NOT READ';
+            readStatus.classList.remove('hasread');
+            readStatus.classList.add('hasnotread');
+        } else if(readStatus.innerText === 'NOT READ') {
+            readStatus.innerText = 'READ';
+            readStatus.classList.remove('hasnotread');
+            readStatus.classList.add('hasread');
+        }
+    });
 
     gridElement.appendChild(bookElement);
 }
