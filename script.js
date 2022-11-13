@@ -87,6 +87,10 @@ function checkLibrary(){
     removeIcon.classList.add('remove-button');
     bookElement.appendChild(removeIcon);
 
+    removeIcon.addEventListener('click', function() {
+        bookElement.style.display = 'none';
+    });
+
 
     const readStatus = document.createElement('span');
     
