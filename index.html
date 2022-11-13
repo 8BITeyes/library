@@ -9,20 +9,30 @@
 <body>
     <fieldset class="modal" style="display: none;">
         <span class="close">&times;</span>
-        <div class="form-input">
-            <label for="bookname">BOOK NAME: </label>
-            <input type="text" for="bookname" id="bookname" required>
-        </div>
-        <div class="form-input">
-            <label for="author">AUTHOR: </label>
-            <input type="text" for="author" id="author" required>
-        </div>
-        <div class="form-input">
-            <label for="pages">PAGES: </label>
-            <input type="number" for="pages" id="pages">
-        </div>
-        <div id="submit">
-            <button type="button" id="addNew">+ADD BOOK</button>
+        <div class="form">
+            <div class="form-input">
+                <label for="bookname">BOOK NAME: </label>
+                <input type="text" for="bookname" id="bookname" required>
+                <div class="required">*</div>
+            </div>
+            <div class="form-input">
+                <label for="author">AUTHOR: </label>
+                <input type="text" for="author" id="author" required>
+                <div class="required">*</div>
+            </div>
+            <div class="form-input">
+                <label for="pages">PAGES: </label>
+                <input type="number" for="pages" id="pages">
+            </div>
+            <div class="read-status">
+                <label for="read" class="radio-label">READ: </label>
+                <input type="radio" id="read" value="yes" name="read-status">
+                <label for="notread" class="radio-label">NOT READ: </label>
+                <input type="radio" id="notread" value="not" name="read-status">
+            </div>
+            <div id="submit">
+                <button type="button" id="addNew">+ADD BOOK</button>
+            </div>
         </div>
     </fieldset>
 
@@ -38,6 +48,8 @@
             <h4>Title: The Hobbit</h4>
             <span>Author: J.R.R. Tolkien</span>
             <span>Pages: 304</span>
+            <img src="icons/cancel_FILL0_wght400_GRAD0_opsz48.svg" class="remove-button">
+            <span class="status">READ</span>
         </div>
     </div>
 </body>

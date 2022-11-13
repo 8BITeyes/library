@@ -30,6 +30,8 @@ const formSubmit = document.querySelector('#addNew'); //SUBMIT FORM BUTTON
 let nameInput = document.getElementById('bookname');
 let authorInput = document.getElementById('author');
 let pageInput = document.getElementById('pages');
+let readInput = document.getElementById('read');
+let notInput = document.getElementById('notread');
 
 formSubmit.addEventListener('click', function(){    //adds book to myLibrary array using form input values
     if(nameInput.value === '' || authorInput.value === '') {
@@ -74,6 +76,11 @@ function checkLibrary(){
     const pagesElement = document.createElement("span");
     pagesElement.innerText = `Pages: ${newestBook.pages}`;
     bookElement.appendChild(pagesElement);
+
+    const removeIcon = document.createElement("img");
+    removeIcon.setAttribute('src', 'icons/cancel_FILL0_wght400_GRAD0_opsz48.svg');
+    removeIcon.setAttribute('class', 'remove-button');
+    bookElement.appendChild(removeIcon);
 
     gridElement.appendChild(bookElement);
 }
