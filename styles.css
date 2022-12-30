@@ -225,6 +225,9 @@ input[type="radio"] {
     font-weight: bold;
     color: rgb(23, 185, 23);
 }
+.hasread:hover {
+    cursor: pointer;
+}
 .hasnotread {
     position: absolute;
     top: 214px;
@@ -232,4 +235,7 @@ input[type="radio"] {
 
     font-weight: bold;
     color: white;
+}
+.hasnotread:hover {
+    cursor: pointer;
 }
