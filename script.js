@@ -60,7 +60,6 @@ formSubmit.addEventListener('click', function(){    //adds book to myLibrary arr
 const gridElement = document.querySelector('.book-grid');
 
 let readInput = document.getElementById('read');  //read status indicator
-let notInput = document.getElementById('notread');
 
 const notRead = document.createElement("span");
 notRead.innerText = 'NOT READ';
